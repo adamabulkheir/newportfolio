@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Header from './components/header';
+import Navbar from './components/navbar';
+import AboutMe from './components/aboutme';
+import Portfolio from './components/portfolio';
+import Contact from './components/contact';
+import Footer from './components/footer';
 import './App.css';
 
 function App() {
+  const [selectedSection, setSelectedSection] = useState('About Me');
+
+  const handleNavigationClick = (section) => {
+    setSelectedSection(section);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Header />
+      <Navbar
+        selectedSection={selectedSection}
+        onNavigationClick={handleNavigationClick}
+      />
+      {selectedSection === 'About Me' && <AboutMe />}
+      {selectedSection === 'Portfolio' && <Portfolio />}
+      {selectedSection === 'Contact' && <Contact />}
+      <Footer />
     </div>
   );
 }
+
+// function Navbar(){}
 
 export default App;

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import Header from './components/header';
-import Navbar from './components/navbar';
-import AboutMe from './components/aboutme';
-import Portfolio from './components/portfolio';
-import Contact from './components/contact';
-import Footer from './components/footer';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import AboutMe from './components/Aboutme';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
